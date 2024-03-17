@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+
+RUN apt update
+
+# ASP.NET Core doesn't handle SIGTERM properly but instead handles SIGINT for graceful shutdown
+STOPSIGNAL SIGINT
+
+WORKDIR /app
+COPY binaries/api /app
+ENTRYPOINT ["dotnet", "Bankai.MLApi.dll"]

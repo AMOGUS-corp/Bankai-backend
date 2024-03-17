@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bankai.MLApi", "Bankai.MLApi\Bankai.MLApi.csproj", "{E8F34D55-034D-4C5A-AA59-A4AC2C148F8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankai.MLApi.Tests", "Bankai.MLApi.Tests\Bankai.MLApi.Tests.csproj", "{6B91A375-E047-4233-B0C0-7BE65D187E80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8F34D55-034D-4C5A-AA59-A4AC2C148F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F34D55-034D-4C5A-AA59-A4AC2C148F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F34D55-034D-4C5A-AA59-A4AC2C148F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F34D55-034D-4C5A-AA59-A4AC2C148F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B91A375-E047-4233-B0C0-7BE65D187E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B91A375-E047-4233-B0C0-7BE65D187E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B91A375-E047-4233-B0C0-7BE65D187E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B91A375-E047-4233-B0C0-7BE65D187E80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A85871D9-00A6-42E4-83A2-320040630941}
+	EndGlobalSection
+EndGlobal
