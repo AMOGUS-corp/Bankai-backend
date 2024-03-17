@@ -277,38 +277,6 @@ public class ServiceController : Controller
     public IActionResult ModelTypes() => 
         Ok(GetValues<ModelAlgorithm>().Select(a => a.ToString()));
 
-    /// <summary>
-    /// Получить детализированную информацию по данному типу архитектуры для модели машинного обучения.
-    /// </summary>
-    /// <param name="modelType">арпхитектура модели</param>
-    /// <returns></returns>
-    [ProducesResponseType(typeof(IEnumerable<string>), StatusCodes.Status200OK)]
-    [MapToApiVersion("1")]
-    [Route("model-type-info", Name = nameof(ModelTypeInfo))]
-    [HttpGet]
-    public IActionResult ModelTypeInfo(string modelType)
-    {
-        if (string.IsNullOrWhiteSpace(modelType))
-            return BadRequest("modelType is empty");
-
-        var modelTypes = GetValues<ModelAlgorithm>().Select(a => a.ToString());
-        if (!modelTypes.Contains(modelType))
-            return BadRequest("This modelType is not supported");
-
-        try
-        {
-            _logger.LogInformation("Trying to get hyperparameters");
-            // var hyperparameters = _modelsService.GetModelTypeInfo(modelType); todo @h0tab
-
-            return Ok();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex.Message);
-
-            return BadRequest("Incorrect mlModel type");
-        }
-    }
 
     /// <summary>
     /// Запрос на список доступных видов обучения моделей. Доступно три вида обучения: обычное обучение без валидации, сплит-обучение с

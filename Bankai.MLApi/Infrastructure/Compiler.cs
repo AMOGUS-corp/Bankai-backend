@@ -39,7 +39,7 @@ public static class Compiler
 
     public static Result<Type> Compile(string assemblyName, string className, string sourceCode)
     {
-        if (string.IsNullOrWhiteSpace(sourceCode)) return Result.Failure<Type>("Source code must not be empty");
+        if (sourceCode.IsNullOrWhiteSpaces()) return Result.Failure<Type>("Source code must not be empty");
         
         using var stream = new MemoryStream();
         

@@ -61,7 +61,7 @@ public class ModelController(
     public async Task<IActionResult>
         SetHyperParameters(List<HyperParameter> hyperParameters, Guid id, string name = "") =>
         (await modelManagementService.Change(new(Id: id, HyperParameters: hyperParameters)))
-        .Map(m => mapper.Map<ModelInformation>(m))
+        .Map(mapper.Map<ModelInformation>)
         .ToActionResult();
 
     /// <summary>
@@ -102,7 +102,7 @@ public class ModelController(
             .Map(l => l.First())
             .Tap(m => m.Features.AddRange(features))
             .Bind(m => modelManagementService.Change(new(Id: id, Features: m.Features)))
-            .Map(m => mapper.Map<ModelInformation>(m))
+            .Map(mapper.Map<ModelInformation>)
             .ToActionResult();
 
     /// <summary>
@@ -136,7 +136,7 @@ public class ModelController(
                 .ToList()
                 .ForEach(f => m.Features.Remove(f)))
             .Bind(m => modelManagementService.Change(new(Id: id, Features: m.Features)))
-            .Map(m => mapper.Map<ModelInformation>(m))
+            .Map(mapper.Map<ModelInformation>)
             .ToActionResult();
 
     /// <summary>
